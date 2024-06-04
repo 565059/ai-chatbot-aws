@@ -9,7 +9,7 @@ TEMPERATURE = float(os.getenv("TEMPERATURE", "0.5"))
 TOP_K = int(os.getenv("TOP_K", "25"))
 MAX_TOKENS = int(os.getenv("MAX_TOKENS", "3000"))
 
-RESULTS_NUMBER = int(os.getenv("RESULTS_NUMBER", "15"))
+RESULTS_NUMBER = int(os.getenv("RESULTS_NUMBER", "4"))
 
 BOTO3_SESSION = boto3.Session(region_name=REGION_NAME)
 BEDROCK_CLIENT = BOTO3_SESSION.client("bedrock-runtime")
