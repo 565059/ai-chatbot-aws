@@ -11,7 +11,7 @@ from langchain_core.messages.human import HumanMessage
 from langchain_core.prompts import MessagesPlaceholder
 
 
-class BedrockRAG:
+class RAGRetriever:
     """"""
 
     def __init__(self, llm, retriever):
