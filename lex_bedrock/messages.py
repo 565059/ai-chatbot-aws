@@ -2,8 +2,8 @@
 
 import json
 
-from langchain_core.messages.ai import AIMessage
 from langchain_core.messages.human import HumanMessage
+from langchain_core.messages.ai import AIMessage
 
 
 class MessagesEncoder(json.JSONEncoder):
