@@ -5,7 +5,7 @@ from langgraph.prebuilt import create_react_agent
 from langchain.tools.retriever import create_retriever_tool
 
 
-
+# METERLE PROMPTS PERSONALIZADOS PARA QUE NO ALUCINE PEPINILLOS
 llm = ChatBedrock(
     client=config.BEDROCK_CLIENT,
     model_id=config.MODEL_ID,
@@ -22,13 +22,13 @@ kb_retriever = AmazonKnowledgeBasesRetriever(
 
 retriever_tool = create_retriever_tool(
         name="knowledge_base_retriever",
-        description="Utiliza esta herramienta para responder preguntas sobre los cursos de formación de Enclave Formación S.L.",
+        description="Utiliza esta herramienta para responder preguntas y proporcionar información sobre cursos de formación de forma concisa y precisa. Si no encuentras la información en la base de conocimientos di que no lo sabes.",
         retriever=kb_retriever
     )
 
-query = "¿Cuánto dura el curso de fotografía?"
+query = "¿Qué productos oferta Enclave Formación?"
 messages = [
-    SystemMessage(content="Eres un asistente que ayuda al humano utilizando las herramientas proporcionadas."),
+    SystemMessage(content="Eres un asistente llamado AVI, eres propiedad de la empresa Enclave Formación S.L, ayudas a los humanos que te preguntan utilizando las herramientas que se te han proporcionado."),
     HumanMessage(content=query)
 ]
 
