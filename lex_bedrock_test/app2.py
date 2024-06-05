@@ -43,12 +43,6 @@ retriever_tool = create_retriever_tool(
     retriever=kb_retriever
 )
 
-# retriever_tool = Tool.from_function(
-#     func=kb_retriever.invoke,
-#     name="Base de conocimiento",
-#     description="Con esta herramienta podrás acceder a una base de conocimiento sobre cursos de formación."
-# )
-
 template = """Eres un agente de inteligencia artificial llamado AVI que responde preguntas del usuario en el idioma en el que está escrita la pregunta. Las herramientas que puede que necesites para ayudarte son:
 
 {tools}
