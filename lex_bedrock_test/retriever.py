@@ -82,9 +82,9 @@ class KBRetriever:
         else:
             return rag_chain
 
-    def invoke(self, input_variables: dict):
+    def invoke(self, input: dict):
         """Crea la respuesta a la pregunta del usuario y actualiza el historial de chat"""
-
+        if input is
         input_msg = input_variables["input"]
         chat_history = input_variables["chat_history"]
 
@@ -103,4 +103,4 @@ class KBRetriever:
             [HumanMessage(content=input_msg), AIMessage(content=answer)]
         )
 
-        return answer, chat_history
+        return {"output": answer, "chat_history": chat_history}
