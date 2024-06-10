@@ -7,7 +7,7 @@ from langchain_core.messages.ai import AIMessage
 
 
 class MessagesEncoder(json.JSONEncoder):
-    """Codificador de mensajes a json"""
+    """Codificador de mensajes de langchain a json"""
 
     def default(self, o):
         """Codifica un mensaje a json a partir de un objeto"""
@@ -20,7 +20,7 @@ class MessagesEncoder(json.JSONEncoder):
 
 
 class MessagesDecoder(json.JSONDecoder):
-    """Decodificador de mensajes desde json"""
+    """Decodificador de mensajes de langchain desde json"""
 
     def __init__(self):
         json.JSONDecoder.__init__(self, object_hook=self.decode_message)

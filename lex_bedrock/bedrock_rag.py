@@ -12,7 +12,7 @@ from langchain_core.prompts import MessagesPlaceholder
 
 
 class RAGRetriever:
-    """asd"""
+    """Crea un 'retriever' que guarda el historial del chat y se lo transmite como contexto a la pregunta del usuario"""
 
     def __init__(self, llm, retriever):
         self.llm = llm
@@ -21,7 +21,7 @@ class RAGRetriever:
         self.rag_chain = self.create_rag_chain()
 
     def create_retriever_with_chat_history(self):
-        """Crea un retriever con historial de chat"""
+        """Crea un 'retriever' con historial de chat"""
 
         contextualize_question_system_prompt = """
         Dado un historial de chat y la última pregunta del usuario,
@@ -50,7 +50,7 @@ class RAGRetriever:
             return history_aware_retriever
 
     def create_rag_chain(self):
-        """Crea una cadena de RAG"""
+        """Crea una cadena de RAG que contextualiza la pregunta del usuario"""
 
         system_prompt = """
         Eres un asistente centrado en realizar tareas de preguntas y respuestas.
@@ -85,7 +85,7 @@ class RAGRetriever:
             return rag_chain
 
     def invoke(self, input_variables: dict):
-        """Crea la respuesta a la pregunta del usuario y actualiza el historial de chat"""
+        """Responde a la pregunta del usuario y actualiza el historial de chat"""
 
         input_msg = input_variables["input"]
         chat_history = input_variables["chat_history"]
