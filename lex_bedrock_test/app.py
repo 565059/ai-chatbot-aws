@@ -1,8 +1,14 @@
+import json
+import logging
+
+import env_config
+from messages import MessagesDecoder, MessagesEncoder
+from langchain_core.messages.ai import AIMessage
+from langchain_core.messages.human import HumanMessage
 from langchain_aws import ChatBedrock
 from tools import Tools
 import env_config
 from agent import ReactAgent
-
 
 
 llm = ChatBedrock(
@@ -15,6 +21,8 @@ llm = ChatBedrock(
             "max_tokens": env_config.MAX_TOKENS,
         },
 )
+
+tools = Tools(env_config).tool_list
 
 template = """Eres un asistente de inteligencia artificial llamado AVI que responde preguntas del usuario en el idioma en el que está escrita la pregunta. Las herramientas que puede que necesites para ayudarte son:
 
@@ -47,30 +55,93 @@ Final Answer: la respuesta final a la pregunta original del usuario es: [respues
 Question: {input}
 Thought: {agent_scratchpad}"""
 
-tools = Tools(env_config).tool_list
 
-react_agent = ReactAgent(llm,template,tools)
+def lex_format_response(event, response_text, chat_history, content_type):
+    """Formatea la respuesta del bot al formato de evento de Lex"""
 
-agent = react_agent.create_agent()
+    event["sessionState"]["intent"]["state"] = "Fulfilled"
 
-config = {"configurable": {"session_id": "test-session"}}
+    if content_type == "SSML":
+        return {
+            "sessionState": {
+                "sessionAttributes": {"chat_history": chat_history},
+                "dialogAction": {"type": "Close"},
+                "intent": event["sessionState"]["intent"],
+            },
+            "messages": [
+                {
+                    "contentType": "SSML",
+                    "content": f"<speak>{response_text}</speak>",
+                }
+            ],
+            "sessionId": event["sessionId"],
+            "requestAttributes": (
+                event["requestAttributes"] if "requestAttributes" in event else None
+            ),
+        }
 
-response = agent.invoke(
-        {"input": "Qué es Menorca"}, 
-        config,
-    )
+    else:
+        return {
+            "sessionState": {
+                "sessionAttributes": {"chat_history": chat_history},
+                "dialogAction": {"type": "Close"},
+                "intent": event["sessionState"]["intent"],
+            },
+            "messages": [
+                {
+                    "contentType": "PlainText",
+                    "content": response_text,
+                },
+            ],
+            "sessionId": event["sessionId"],
+            "requestAttributes": (
+                event["requestAttributes"] if "requestAttributes" in event else None
+            ),
+        }
 
-print(response["output"])
 
-# print(response["chat_history"])
+def load_chat_history(session):
+    if "chat_history" in session:
+        return json.loads(session["chat_history"], cls=MessagesDecoder)
+    else:
+        return []
+    
+def save_chat_history(chat_history):
+    if len(chat_history) > 6:
+        chat_history = chat_history[-3:]
+    return json.dumps(chat_history, cls=MessagesEncoder)
 
-print("---")
+def lambda_handler(event, context):
+    """Función principal de la lambda"""
 
-response = agent.invoke(
-        {"input": "Recuerdas sobre qué te he preguntado?"},
-        config,
-    )
+    if event["inputTranscript"]:
+        user_input = event["inputTranscript"]
+        session = event["sessionState"]["sessionAttributes"]
+        input_mode = event["inputMode"]
+        session_id = event["sessionId"]
 
-print(response["output"])
+        content_type = "SSML" if input_mode == "Speech" else "PlainText"
+        
+        chat_history = load_chat_history(session)
+        
+        agent = ReactAgent(llm, template, tools, session_id, chat_history)
 
-print(response["chat_history"])
+        if user_input.strip() == "":
+            result = {"answer": "Por favor, realiza una pregunta."}
+        else:
+            input_variables = {"input": user_input, "chat_history": chat_history}
+
+            logging.info("Input variables: %s", input_variables)
+
+            result = agent.invoke(input_variables)
+
+            answer, chat_history = result
+            
+        chat_history = save_chat_history(chat_history)
+
+        return lex_format_response(
+            event,
+            answer,
+            chat_history,
+            content_type,
+        )
