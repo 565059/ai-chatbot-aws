@@ -24,8 +24,8 @@ class Tools:
         )
         
         retriever_tool = create_retriever_tool(
-            name="Base de conocimiento de Enclave Formación",
-            description="Con esta herramienta podrás acceder a una base de conocimiento sobre Enclave Formación y sus cursos de formación.",
+            name="Base de conocimiento",
+            description="Con esta herramienta podrás acceder a una base de conocimiento personalizada",
             retriever=kb_retriever
         )
         
