@@ -14,9 +14,7 @@ Para generar las respuestas de forma automática se ha empleado el uso de [**RAG
 
 * **Wikipedia**: utilizando su API de Python, el agente puede conectar con los servidores de Wikipedia proporcionando información sobre múltiples temas.
 
-## <img src="https://github.com/565059/ai-chatbot/assets/118855900/a0ce769f-eca5-48e6-b4ff-7d980141640d" alt="amazonwebservices" width="30"/> Servicios de AWS
-
-
+## ☁️ Servicios de AWS
 
 En este caso se ha decidido utilizar AWS para realizar las conexiones entre servicios, ya que, ofrece un modelo pago por uso bastante asequible y una seguridad sin comparación.
 
