@@ -19,8 +19,8 @@ A [**ReAct Agent**](https://react-lm.github.io/ "Go to ReAct Agent explanation")
 * **Knowledge Base Tool**: we first create the knowledge base using **Amazon Titan Embeddings** as the embeddings model and **Pinecone** as the vector database in which the indexed embeddings will be stored. Then, we create the knowledge base tool using the `create_retriever_tool` method from **LangChain** transforming our retriever into a `Tool` object so that the agent can access it and execute it.
 
        retriever_tool = create_retriever_tool(
-            name="Base de conocimiento de Enclave Formación",
-            description="Con esta herramienta podrás acceder a una base de conocimiento sobre Enclave Formación y sus cursos de formación.",
+            name="Knowledge Base",
+            description="With this tool you can access a custom knowledge base.",
             retriever=kb_retriever
         )
   
