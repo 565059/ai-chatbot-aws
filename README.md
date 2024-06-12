@@ -1,6 +1,6 @@
 # 🤖 ai-chatbot
 
-[![565059 - ai-chatbot](https://img.shields.io/badge/565059-ai-chatbot?style=plastic&color=FF8900&logo=github)](https://github.com/565059/ai-chatbot "Go to GitHub repo") [![Python - 3.12.0](https://img.shields.io/static/v1?label=Python&message=3.12.0&color=3776AB&logo=python&logoColor=FFDE56)](https://www.python.org/downloads/release/python-3120/ "Go to Python version") [![Amazon Web Services](https://img.shields.io/static/v1?label=Amazon-Web-Services&message=&color=#232F3E&logo=amazonwebservices&logoColor=FFFFFF)](https://aws.amazon.com "Go to AWS console")
+[![565059 - ai-chatbot](https://img.shields.io/badge/565059-ai--chatbot?style=plastic&color=FF8900&logo=github)](https://github.com/565059/ai-chatbot "Go to GitHub repo") [![Python - 3.12.0](https://img.shields.io/static/v1?label=Python&message=3.12.0&color=3776AB&logo=python&logoColor=FFDE56)](https://www.python.org/downloads/release/python-3120/ "Go to Python version") [![Amazon Web Services](https://img.shields.io/static/v1?label=Amazon-Web-Services&message=&color=#232F3E&logo=amazonwebservices&logoColor=FFFFFF)](https://aws.amazon.com "Go to AWS console")
 
 ![Static Badge](https://img.shields.io/badge/Amazon_Web_Services-a?style=plastic&logo=amazonwebservices)
 
