@@ -52,7 +52,7 @@ class Tools:
         wikipedia_tool = Tool.from_function(
             func=self.search_wikipedia,
             name="Wikipedia",
-            description="Con esta herramienta podrás acceder a Wikipedia para resumir o explicar temas variados que no conozcas por defecto y que no tengan relación con Enclave Formación."
+            description="Con esta herramienta podrás acceder a Wikipedia para resumir o explicar temas variados que no conozcas por defecto."
         )
         
         if wikipedia_tool:
