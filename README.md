@@ -17,7 +17,7 @@ This project develops an intelligent chatbot that generates automatic responses 
 A [**ReAct Agent**](https://react-lm.github.io/ "Go to ReAct Agent explanation") AI type has been implemented, utilizing the [**Retrieval Augmented Generation (RAG)**](https://aws.amazon.com/what-is/retrieval-augmented-generation/ "Go to RAG explanation") technique to provide accurate and up-to-date responses. This agent interacts with two key tools:
 
 * **Knowledge Base**: It employs RAG to retrieve relevant information on specific topics, such as company salary data.
-* **Wikipedia**: It uses the Wikipedia API to access a wide range of information, enriching the responses with accurate and varied data.
+* **Wikipedia**: It uses the Wikipedia API to access a wide range of information, answering with accurate and varied data.
 
 ## ☁️ AWS Services Used
 
