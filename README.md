@@ -20,16 +20,6 @@ Para generar las respuestas de forma automática se ha empleado el uso de [**RAG
 
 * **Wikipedia**: utilizando su API de Python, el agente puede conectar con los servidores de Wikipedia proporcionando información sobre múltiples temas.
 
-## ☁️ Servicios de AWS
-
-Se ha utilizado AWS por la facilidad a la hora de realizar las conexiones entre servicios y por su bajo coste, ya que su modelo suele ser de pago por uso.
-
-Los servicios utilizados son:
-
-* **[Amazon S3](https://aws.amazon.com/s3):** utilizado para el almacenamiento de los archivos `.pdf` en los que se plantea la información que queremos que nuestro **chatbot** responda con claridad y exactitud.
-* **[Amazon Lex](https://aws.amazon.com/lex/):** empleado para proporcionar la interfaz de usuario y la utilización de servicios de voz integrados como **Transcribe** y **Polly**.
-* **[Amazon Bedrock](https://aws.amazon.com/bedrock/):** empleado como centro de selección de **modelos fundacionales (FM)** y como lugar en el que se aloja la base de conocimiento creada.
-* **[Amazon Lambda](https://aws.amazon.com/lambda/):** servicio **serverless** con el que se realizan las llamadas al agente y a sus herramientas. El beneficio de este servicio es su escalabilidad automática, su seguridad y su flexibilidad.
 
 🤖 AI Chatbot con AWS y LangChain
 📋 Resumen
@@ -46,10 +36,11 @@ Se ha implementado un agente de IA de tipo ReAct Agent que utiliza la técnica d
 
 La solución se apoya en varios servicios de AWS para garantizar una integración fluida y un costo eficiente. Los servicios principales son:
 
-* [**📁 S3**](https://aws.amazon.com/s3): Almacena los archivos .pdf que contienen la información estructurada que el chatbot utiliza para generar respuestas claras y precisas.
+* [**<img alt="s3" src="https://github.com/565059/ai-chatbot/assets/118855900/198b85a0-32d0-4142-982e-a46613cf8fe5" width="12" height="auto"> S3**](https://aws.amazon.com/s3): Almacena los archivos .pdf que contienen la información estructurada que el chatbot utiliza para generar respuestas claras y precisas.
 * [**💬 Lex**](https://aws.amazon.com/lex/): Proporciona la interfaz de usuario para el chatbot, incluyendo servicios de voz como Amazon Transcribe y Amazon Polly.
 * [**🧠 Bedrock**](https://aws.amazon.com/bedrock/): Actúa como el centro de selección de modelos fundacionales (FM) y alberga la base de conocimiento.
 * [**<img alt="lambda" src="https://github.com/565059/ai-chatbot/assets/118855900/4a20fe65-583e-4bef-8008-bab4dea65ec7" width="12" height="auto"> Lambda**](https://aws.amazon.com/lambda/): Funciona como un servicio serverless que facilita las llamadas al agente de IA y sus herramientas, ofreciendo escalabilidad automática, seguridad y flexibilidad.
+
 
 📚 Bibliotecas y Herramientas
 
