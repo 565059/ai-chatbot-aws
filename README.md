@@ -36,13 +36,15 @@ Se ha implementado un agente de IA de tipo ReAct Agent que utiliza la técnica d
 
 La solución se apoya en varios servicios de AWS para garantizar una integración fluida y un costo eficiente. Los servicios principales son:
 
-* [a<img alt="s3" src="https://github.com/565059/ai-chatbot/assets/118855900/198b85a0-32d0-4142-982e-a46613cf8fe5" width="15" height="auto"> **S3**](https://aws.amazon.com/s3): Almacena los archivos .pdf que contienen la información estructurada que el chatbot utiliza para generar respuestas claras y precisas.
-* [**💬 Lex**](https://aws.amazon.com/lex/): Proporciona la interfaz de usuario para el chatbot, incluyendo servicios de voz como Amazon Transcribe y Amazon Polly.
-* [**🧠 Bedrock**](https://aws.amazon.com/bedrock/): Actúa como el centro de selección de modelos fundacionales (FM) y alberga la base de conocimiento.
-* [**<img alt="lambda" src="https://github.com/565059/ai-chatbot/assets/118855900/4a20fe65-583e-4bef-8008-bab4dea65ec7" width="12" height="auto"> Lambda**](https://aws.amazon.com/lambda/): Funciona como un servicio serverless que facilita las llamadas al agente de IA y sus herramientas, ofreciendo escalabilidad automática, seguridad y flexibilidad.
+* [**S3**](https://aws.amazon.com/s3): Almacena los archivos .pdf que contienen la información estructurada que el chatbot utiliza para generar respuestas claras y precisas.
+* [**Lex**](https://aws.amazon.com/lex/): Proporciona la interfaz de usuario para el chatbot, incluyendo servicios de voz como Amazon Transcribe y Amazon Polly.
+* [![Arch_Amazon-Bedrock_16](https://github.com/565059/ai-chatbot/assets/118855900/7343fa26-34c3-45b2-9477-ea4d753e6bf0)**Bedrock**](https://aws.amazon.com/bedrock/): Actúa como el centro de selección de modelos fundacionales (FM) y alberga la base de conocimiento.
+* [**Lambda**](https://aws.amazon.com/lambda/): Funciona como un servicio serverless que facilita las llamadas al agente de IA y sus herramientas, ofreciendo escalabilidad automática, seguridad y flexibilidad.
 
 
 📚 Bibliotecas y Herramientas
+
+
 
     LangChain: Permite la integración y orquestación de diferentes herramientas de IA y bases de conocimiento, facilitando la creación de un agente de IA robusto.
     Wikipedia API: Proporciona acceso a datos extensos y actualizados de Wikipedia, enriqueciendo las capacidades del chatbot.
