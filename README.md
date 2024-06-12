@@ -18,13 +18,13 @@ A [**ReAct Agent**](https://react-lm.github.io/ "Go to ReAct Agent explanation")
 
 * **Knowledge Base Tool**: we first create the knowledge base using **Amazon Titan Embeddings** as the embeddings model and **Pinecone** as the vector database in which the indexed embeddings will be stored. Then, we create the knowledge base tool using the `create_retriever_tool` method from **LangChain** transforming our retriever into a `Tool` object so that the agent can access it and execute it.
 
-```python
+       ```python
        retriever_tool = create_retriever_tool(
             name="Knowledge Base",
             description="With this tool you can access a custom knowledge base.",
             retriever=kb_retriever
         )
-```
+       ```
 
 * **Wikipedia Tool**: using the same `Tool` class from before, and the `from_function` function, we create the Wikipedia tool from a custom function that checks first if the Wikipedia page exists, if it does, then the API summarizes the desired page.
 
