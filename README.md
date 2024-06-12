@@ -39,6 +39,7 @@ A [**ReAct Agent**](https://react-lm.github.io/ "Go to ReAct Agent explanation")
     else:
       tools_logger.info("TOOLS: Página no encontrada en Wikipedia")
       return "No page was found on Wikipedia that matching your search."
+
   
   wikipedia_tool = Tool.from_function(
     func=self.search_wikipedia,
