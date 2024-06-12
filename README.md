@@ -1,12 +1,12 @@
-# ai-chatbot
+# 🤖 ai-chatbot
 
 [![565059 - ai-chatbot](https://img.shields.io/static/v1?label=565059&message=ai-chatbot&color=FF8900&logo=github)](https://github.com/565059/ai-chatbot "Go to GitHub repo") [![Python - 3.12.0](https://img.shields.io/static/v1?label=Python&message=3.12.0&color=3776AB&logo=python&logoColor=FFDE56)](https://www.python.org/downloads/release/python-3120/ "Go to Python version")
 
 ## ✏️ Resumen
 
-Esta aplicación crea respuestas automáticas para un **chatbot** utilizando IA generativa, una base de conocimiento, Amazon Web Services y las bibliotecas de [**LangChain**](https://github.com/langchain-ai/langchain) y [**Wikipedia API**](https://github.com/martin-majlis/Wikipedia-API).
+Esta aplicación crea respuestas automáticas para un **chatbot** utilizando IA generativa con conexión a una base de conocimiento. Para realizar dicha conexión se ha empleado Amazon Web Services y las bibliotecas de [**LangChain**](https://github.com/langchain-ai/langchain) y de [**Wikipedia API**](https://github.com/martin-majlis/Wikipedia-API).
 
-## 🤖 IA Generativa
+## 🧬 IA Generativa
 
 Para generar las respuestas de forma automática se ha empleado el uso de [**RAG**](https://aws.amazon.com/what-is/retrieval-augmented-generation/) con un agente de IA, en este caso se ha creado un [**ReAct Agent**](https://react-lm.github.io/), el cual, utiliza dos herramientas para mejorar su capacidad de respuesta:
 
