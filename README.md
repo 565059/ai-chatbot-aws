@@ -41,4 +41,16 @@ El flujo general del chatbot es el siguiente:
 * **Generación de la Respuesta**: Lambda llama al agente de IA que utiliza LangChain para procesar el evento.
 * **Consulta a la Base de Conocimiento**: El agente emplea RAG para buscar información en la base de conocimiento alojada en Amazon Bedrock.
 * **Acceso a Wikipedia**: En caso de requerir información adicional, el agente consulta la Wikipedia utilizando su API.
-    Respuesta al Usuario: La respuesta generada se envía de vuelta a Amazon Lex, que la presenta al usuario.
+* **Respuesta al Usuario**: La respuesta generada se formatea y se envía de vuelta a Amazon Lex, que la presenta al usuario.
+```mermaid
+flowchart TD
+    A(Lex sends an event) -->|event| B["Lambda creates and invokes 
+    the agent using LangChain"]
+    B --> C{"ReAct agent chooses
+     and 
+     returns the answer"}
+    C -->|Direct answer| D["Lambda formats the response 
+    and sends it back to Lex"]
+    C -->|Knowledge base answer| D
+    C -->|Wikipedia answer| D
+```
