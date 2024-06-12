@@ -4,9 +4,7 @@
 
 Esta aplicación crea respuestas automáticas para un **chatbot** utilizando IA generativa, una base de conocimiento, Amazon Web Services y las bibliotecas de [**LangChain**](https://github.com/langchain-ai/langchain) y [**Wikipedia API**](https://github.com/martin-majlis/Wikipedia-API).
 
-![Static Badge](https://img.shields.io/badge/Python-3.12-%233776AB?style=plastic&logo=python&logoColor=%23FFFFFF&link=https%3A%2F%2Fwww.python.org%2Fdownloads%2Frelease%2Fpython-3120%2F) ![Static Badge](https://img.shields.io/badge/a-0.2.3-%23FFFFFF?style=plastic&logo=langchain&logoColor=%23FFFFFF&labelColor=%231C3C3C&link=https%3A%2F%2Fwww.python.org%2Fdownloads%2Frelease%2Fpython-3120%2F)
-
-
+![Static Badge](https://img.shields.io/badge/Python-3.12-%233776AB?style=plastic&logo=python&logoColor=%23FFFFFF&link=https%3A%2F%2Fwww.python.org%2Fdownloads%2Frelease%2Fpython-3120%2F) ![Static Badge](https://img.shields.io/badge/%F0%9F%A6%9C%EF%B8%8F%F0%9F%94%97LangChain-0.2.3-%23FFFFFF?style=plastic&logo=langchain&labelColor=%231C3C3C&link=https%3A%2F%2Fgithub.com%2Flangchain-ai%2Flangchain)
 
 ## IA Generativa
 
