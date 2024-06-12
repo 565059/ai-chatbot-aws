@@ -49,9 +49,10 @@ Se ha implementado un agente de IA de tipo ReAct Agent que utiliza la técnica d
 La solución se apoya en varios servicios de AWS para garantizar una integración fluida y un costo eficiente. Los servicios principales son:
 
 * [**📁 S3**](https://aws.amazon.com/s3): Almacena los archivos .pdf que contienen la información estructurada que el chatbot utiliza para generar respuestas claras y precisas.
-* [**💬 Lex**](https://aws.amazon.com/lex/):** Proporciona la interfaz de usuario para el chatbot, incluyendo servicios de voz como Amazon Transcribe y Amazon Polly.
-* [**🧠 Bedrock**](https://aws.amazon.com/bedrock/):** Actúa como el centro de selección de modelos fundacionales (FM) y alberga la base de conocimiento.
-* [**λ Lambda**](https://aws.amazon.com/lambda/):** Funciona como un servicio serverless que facilita las llamadas al agente de IA y sus herramientas, ofreciendo escalabilidad automática, seguridad y flexibilidad.
+* [**💬 Lex**](https://aws.amazon.com/lex/): Proporciona la interfaz de usuario para el chatbot, incluyendo servicios de voz como Amazon Transcribe y Amazon Polly.
+* [**🧠 Bedrock**](https://aws.amazon.com/bedrock/): Actúa como el centro de selección de modelos fundacionales (FM) y alberga la base de conocimiento.
+* [** Lambda**](https://aws.amazon.com/lambda/): Funciona como un servicio serverless que facilita las llamadas al agente de IA y sus herramientas, ofreciendo escalabilidad automática, seguridad y flexibilidad.
+![awslambda](https://github.com/565059/ai-chatbot/assets/118855900/7d040384-d65d-47b8-9b66-20441fa33d96)
 
 📚 Bibliotecas y Herramientas
 
