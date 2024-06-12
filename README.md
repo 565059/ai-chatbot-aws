@@ -24,7 +24,13 @@ A [**ReAct Agent**](https://react-lm.github.io/ "Go to ReAct Agent explanation")
             retriever=kb_retriever
         )
   
-* **Wikipedia Tool**: using the same `Tool` class from before, and the `create_from_function` function, we create the Wikipedia tool from a custom function that checks first if the Wikipedia page exists, if it does, then the API summarizes the desired page.
+* **Wikipedia Tool**: using the same `Tool` class from before, and the `from_function` function, we create the Wikipedia tool from a custom function that checks first if the Wikipedia page exists, if it does, then the API summarizes the desired page.
+
+          wikipedia_tool = Tool.from_function(
+            func=self.search_wikipedia,
+            name="Wikipedia",
+            description="With this tool you can access Wikipedia to summarize or explain different topics that you don't know by default."
+        )
 
 ## ☁️ AWS Services Used
 
