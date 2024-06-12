@@ -44,7 +44,7 @@ El flujo general del chatbot es el siguiente:
 * **Respuesta al Usuario**: La respuesta generada se formatea y se envía de vuelta a Amazon Lex, que la presenta al usuario.
 ```mermaid
 flowchart TD
-    A(Lex sends an event) -->|event| B["Lambda crea and e invoca
+    A(Lex envía un evento) -->|evento| B["Lambda crea and e invoca
     el agente utilizando LangChain"]
     B --> C{"El agente ReAct elige
      y
