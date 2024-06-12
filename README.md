@@ -29,7 +29,7 @@ A [**ReAct Agent**](https://react-lm.github.io/ "Go to ReAct Agent explanation")
           wikipedia_tool = Tool.from_function(
             func=self.search_wikipedia,
             name="Wikipedia",
-            description="With this tool you can access Wikipedia to summarize or explain different topics that you don't know by default."
+            description="With this tool you can access Wikipedia to summarize different topics that you don't know."
         )
 
 ## ☁️ AWS Services Used
