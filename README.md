@@ -81,8 +81,8 @@ The general flow of the chatbot is as follows:
 flowchart TD
     A(Lex sends an event) -->|event| B["Lambda creates and invokes 
     the agent using LangChain"]
-    B --> C{"ReAct agent chooses
-     and 
+    B --> C{"ReAct agent
+     chooses and 
      returns the answer"}
     C -->|Direct answer| D["Lambda formats the response 
     and sends it back to Lex"]
