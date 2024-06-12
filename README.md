@@ -12,7 +12,7 @@ _Services used_
 
 Este proyecto crea un chatbot inteligente que genera respuestas automáticas utilizando inteligencia artificial generativa y una base de conocimiento dinámica. La solución integra varios servicios de Amazon Web Services (AWS) y utiliza las bibliotecas de [**LangChain**](https://github.com/langchain-ai/langchain) y la [**API de Wikipedia**](https://github.com/martin-majlis/Wikipedia-API) para enriquecer las respuestas.
 
-## 🧠 IA Generativa con RAG
+## 🤔 IA Generativa con RAG
 
 Se ha implementado un agente de IA de tipo [**ReAct Agent**](https://react-lm.github.io/) que utiliza la técnica de [**Retrieval Augmented Generation (RAG)**](https://aws.amazon.com/what-is/retrieval-augmented-generation/) para proporcionar respuestas precisas y actualizadas. Este agente interactúa con dos herramientas clave:
 
@@ -23,15 +23,15 @@ Se ha implementado un agente de IA de tipo [**ReAct Agent**](https://react-lm.gi
 
 La solución se apoya en varios servicios de AWS para garantizar una integración fluida y un costo eficiente. Los servicios principales son:
 
-* [**S3**](https://aws.amazon.com/s3): Almacena los archivos .pdf que contienen la información estructurada que el chatbot utiliza para generar respuestas claras y precisas.
-* [**Lex**](https://aws.amazon.com/lex/): Proporciona la interfaz de usuario para el chatbot, incluyendo servicios de voz como Amazon Transcribe y Amazon Polly.
-* [**Bedrock**](https://aws.amazon.com/bedrock/): Actúa como el centro de selección de modelos fundacionales (FM) y alberga la base de conocimiento.
-* [**Lambda**](https://aws.amazon.com/lambda/): Funciona como un servicio serverless que facilita las llamadas al agente de IA y sus herramientas, ofreciendo escalabilidad automática, seguridad y flexibilidad.
+* [**📁 S3**](https://aws.amazon.com/s3): Almacena los archivos .pdf que contienen la información estructurada que el chatbot utiliza para generar respuestas claras y precisas.
+* [**💬 Lex**](https://aws.amazon.com/lex/): Proporciona la interfaz de usuario para el chatbot, incluyendo servicios de voz como Amazon Transcribe y Amazon Polly.
+* [**🧠 Bedrock**](https://aws.amazon.com/bedrock/): Actúa como el centro de selección de modelos fundacionales (FM) y alberga la base de conocimiento.
+* [**⚙ Lambda**](https://aws.amazon.com/lambda/): Funciona como un servicio serverless que facilita las llamadas al agente de IA y sus herramientas, ofreciendo escalabilidad automática, seguridad y flexibilidad.
 
 ## 📚 Bibliotecas y Herramientas
 
-* [**LangChain**](https://github.com/langchain-ai/langchain): Permite la integración y orquestación de diferentes herramientas de IA y bases de conocimiento, facilitando la creación de un agente de IA robusto.
-* [**Wikipedia-API**](https://github.com/martin-majlis/Wikipedia-API): Proporciona acceso a datos extensos y actualizados de Wikipedia, enriqueciendo las capacidades del chatbot.
+* [**🦜️🔗 LangChain**](https://github.com/langchain-ai/langchain): Permite la integración y orquestación de diferentes herramientas de IA y bases de conocimiento, facilitando la creación de un agente de IA robusto.
+* [**🌍 Wikipedia-API**](https://github.com/martin-majlis/Wikipedia-API): Proporciona acceso a datos extensos y actualizados de Wikipedia, enriqueciendo las capacidades del chatbot.
 
 ## 🚀 Descripción del Funcionamiento
 
