@@ -88,4 +88,9 @@ flowchart TD
     and sends it back to Lex"]
     C -->|Knowledge base answer| D
     C -->|Wikipedia answer| D
+
+    style A stroke:#45AC95
+    style B stroke:#DA661A
+    style C stroke:#45AC95
+    style D stroke:#DA661A
 ```
