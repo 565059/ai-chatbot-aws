@@ -21,6 +21,6 @@ En este caso se ha decidido utilizar AWS para realizar las conexiones entre serv
 Los servicios utilizados son:
 
 * **[S3 (Simple Storage Service)](https://aws.amazon.com/s3):** utilizado para el almacenamiento de los archivos `.pdf` en los que se plantea la información que queremos que nuestro **chatbot** responda con claridad y exactitud.
-* **Lex:** empleado para proporcionar la interfaz de usuario y la utilización de servicios de voz integrados como pueden ser **Transcribe** y **Polly**.
-* **Bedrock:** empleado como centro de selección de **modelos fundacionales (FM)** y como lugar en el que se aloja la base de conocimiento creada.
-* **Lambda:** servicio **serverless** que se utiliza para realizar llamadas al agente y a sus herramientas. El beneficio de este servicio es su escalabilidad automática, su seguridad y su flexibilidad.
+* **[Lex](https://aws.amazon.com/lex/):** empleado para proporcionar la interfaz de usuario y la utilización de servicios de voz integrados como pueden ser **Transcribe** y **Polly**.
+* **[Bedrock](https://aws.amazon.com/bedrock/):** empleado como centro de selección de **modelos fundacionales (FM)** y como lugar en el que se aloja la base de conocimiento creada.
+* **[Lambda](https://aws.amazon.com/lambda/):** servicio **serverless** que se utiliza para realizar llamadas al agente y a sus herramientas. El beneficio de este servicio es su escalabilidad automática, su seguridad y su flexibilidad.
