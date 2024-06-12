@@ -7,14 +7,7 @@ Esta aplicación crea respuestas automáticas para un **chatbot** utilizando IA 
 _Social buttons_
 
 [![565059 - ai-chatbot](https://img.shields.io/static/v1?label=565059&message=ai-chatbot&color=green&logo=github)](https://github.com/565059/ai-chatbot "Go to GitHub repo")
-[![stars - ai-chatbot](https://img.shields.io/github/stars/565059/ai-chatbot?style=social)](https://github.com/565059/ai-chatbot)
-[![forks - ai-chatbot](https://img.shields.io/github/forks/565059/ai-chatbot?style=social)](https://github.com/565059/ai-chatbot)
 
-
-_Repo metadata_
-
-
-[![GitHub tag](https://img.shields.io/github/tag/565059/ai-chatbot?include_prereleases=&sort=semver&color=green)](https://github.com/565059/ai-chatbot/releases/)
 ## IA Generativa
 
 Para generar las respuestas de forma automática se ha empleado el uso de [**RAG**](https://aws.amazon.com/what-is/retrieval-augmented-generation/) con un agente de IA, en este caso se ha creado un [**ReAct Agent**](https://react-lm.github.io/), el cual, utiliza dos herramientas para mejorar su capacidad de respuesta:
