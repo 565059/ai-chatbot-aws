@@ -89,7 +89,7 @@ flowchart TD
     C -->|Knowledge base answer| D
     C -->|Wikipedia answer| D
 
-    style A stroke:#65AE95, fill:#65AE95
+    style A stroke:#65AEA5, fill:#65AEA5
     style B stroke:#BA661A, fill:#BA661A
     style C stroke:#434386, fill:#434386
     style D stroke:#BA661A, fill:#BA661A
