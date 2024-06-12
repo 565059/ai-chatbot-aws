@@ -1,8 +1,8 @@
 # ai-chatbot
 
-_Social_
-
 [![565059 - ai-chatbot](https://img.shields.io/static/v1?label=565059&message=ai-chatbot&color=FF8900&logo=github)](https://github.com/565059/ai-chatbot "Go to GitHub repo")
+
+[![Python - 3.12.0](https://img.shields.io/static/v1?label=Python&message=3.12.0&color=FFDE56&logo=python)](https://www.python.org/downloads/release/python-3120/ "Go to Python version")
 
 ## Resumen
 
