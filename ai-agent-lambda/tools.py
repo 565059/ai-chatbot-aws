@@ -2,6 +2,7 @@ from langchain.agents.tools import Tool
 from langchain.tools.retriever import create_retriever_tool
 from langchain_aws import  AmazonKnowledgeBasesRetriever
 import wikipedia
+import wikipediaapi
 
 class Tools:
     """Clase que contiene las herramientas utilizadas por el agente de IA."""
@@ -27,18 +28,36 @@ class Tools:
             return retriever_tool
         else:
             raise Exception("Error al crear la herramienta de base de conocimiento")
+    
+    def search_wikipedia(self, title):
+        """Método que busca en Wikipedia para saber si la página con el título proporcionado existe."""
+        wiki = wikipediaapi.Wikipedia('es')
+        page = wiki.page(title)
         
+        if page.exists():
+            return page.title
+        else:
+            return None
+        
+    def get_wikipedia_page_summary(self, query):
+        """Método que crea un resumen de la página encontrada por el método 'search_wikipedia'."""
+        title = self.search_wikipedia(query)
+        if title:
+            return wikipedia.summary(title)
+        else:
+            return "No se encontró ninguna página exacta en Wikipedia que coincida con la búsqueda."
         
     def create_wikipedia_tool(self):
         """Método que crea una herramienta de búsqueda en Wikipedia a partir de un método y la biblioteca de 'wikipedia'."""
         wikipedia_tool = Tool.from_function(
-            func=wikipedia.summary,
+            func=self.get_wikipedia_page_summary,
             name="Wikipedia",
-            description="Con esta herramienta podrás crear resúmenes acerca de temas de actualidad."
+            description="Con esta herramienta podrás acceder a Wikipedia para resumir o explicar temas variados que no conozcas por defecto y que no tengan relación con Enclave Formación."
         )
         
         if wikipedia_tool:
             return wikipedia_tool
         else:
             raise Exception("Error al crear la herramienta de Wikipedia")
+    
     
