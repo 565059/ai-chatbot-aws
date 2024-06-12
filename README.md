@@ -10,7 +10,7 @@ _Servicios usados_
 
 ## ✏️ Resumen
 
-Esta aplicación crea respuestas automáticas para un **chatbot** utilizando IA generativa con conexión a una base de conocimiento. Para realizar dicha conexión se ha empleado Amazon Web Services y su SDK para Python, [**Boto3**](https://github.com/boto/boto3), y las bibliotecas de [**LangChain**](https://github.com/langchain-ai/langchain) y de [**Wikipedia API**](https://github.com/martin-majlis/Wikipedia-API).
+Esta aplicación crea respuestas automáticas para un **chatbot** utilizando IA generativa con conexión a una base de conocimiento. Para realizar dicha conexión se ha empleado Amazon Web Services y [**Boto3**](https://github.com/boto/boto3), su SDK para Python. Además se han utilizado las bibliotecas de [**LangChain**](https://github.com/langchain-ai/langchain) y de [**Wikipedia API**](https://github.com/martin-majlis/Wikipedia-API).
 
 ## 🧬 IA Generativa
 
