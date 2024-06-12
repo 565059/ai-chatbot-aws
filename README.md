@@ -19,6 +19,8 @@ A [**ReAct Agent**](https://react-lm.github.io/ "Go to ReAct Agent explanation")
 * **Knowledge Base Tool**: we first create the knowledge base using **Amazon Titan Embeddings** as the embeddings model and **Pinecone** as the vector database in which the indexed embeddings will be stored. Then, we create the knowledge base tool using the `create_retriever_tool` method from **LangChain** transforming our retriever into a `Tool` object so that the agent can access it and execute it.
 
   ```python
+  from langchain.tools.retriever import create_retriever_tool
+
   retriever_tool = create_retriever_tool(
     name="Knowledge Base",
     description="With this tool you can access a custom knowledge base.",
@@ -29,16 +31,19 @@ A [**ReAct Agent**](https://react-lm.github.io/ "Go to ReAct Agent explanation")
 * **Wikipedia Tool**: using the same `Tool` class from before, and the `from_function` function, we create the Wikipedia tool from a custom function that checks first if the Wikipedia page exists, if it does, then the API summarizes the desired page.
 
   ```python
+  import wikipediaapi
+  from langchain.agents.tools import Tool
+  
   def search_wikipedia(self, title):
     wiki_wiki = wikipediaapi.Wikipedia('SampleProject/0.0 (example@example.com)', 'en')
     page = wiki_wiki.page(title)
         
     if page.exists():
-      tools_logger.info(f"TOOLS: Page not found:\n{page.summary}")
+      tools_logger.info(f"TOOLS: Page found:\n{page.summary}")
       return page.summary 
     else:
-      tools_logger.info("TOOLS: Página no encontrada en Wikipedia")
-      return "No page was found on Wikipedia that matching your search."
+      tools_logger.info("TOOLS: Page not found in Wikipedia")
+      return "No page was found on Wikipedia matching your search."
 
   
   wikipedia_tool = Tool.from_function(
