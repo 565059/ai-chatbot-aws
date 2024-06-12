@@ -10,36 +10,48 @@ _Services used_
 
 ## 📋 Summary
 
-This project develops an intelligent chatbot that generates automatic responses using generative artificial intelligence and a dynamic knowledge base. The solution integrates various Amazon Web Services (AWS) and leverages the LangChain libraries and the Wikipedia API to enrich responses.
+This project develops an intelligent chatbot that generates automatic responses using generative artificial intelligence and a dynamic knowledge base. The solution integrates various Amazon Web Services (AWS) and leverages the [**LangChain**](https://github.com/langchain-ai/langchain "Go to LangChain") libraries and the [**Wikipedia API**](https://github.com/martin-majlis/Wikipedia-API "Go to Wikipedia-API") to enrich responses.
 
 ## 🤔 Generative AI with RAG
 
-A ReAct Agent AI type has been implemented, utilizing the Retrieval Augmented Generation (RAG) technique to provide accurate and up-to-date responses. This agent interacts with two key tools:
+A [**ReAct Agent**](https://react-lm.github.io/ "Go to ReAct Agent explanation") AI type has been implemented, utilizing the [**Retrieval Augmented Generation (RAG)**](https://aws.amazon.com/what-is/retrieval-augmented-generation/ "Go to RAG explanation") technique to provide accurate and up-to-date responses. This agent interacts with two key tools:
 
-Knowledge Base: It employs RAG to retrieve relevant information on specific topics, such as company salary data.
-Wikipedia: It uses the Wikipedia API to access a wide range of information, enriching the responses with accurate and varied data.
+* **Knowledge Base**: It employs RAG to retrieve relevant information on specific topics, such as company salary data.
+* **Wikipedia**: It uses the Wikipedia API to access a wide range of information, enriching the responses with accurate and varied data.
 
 ## ☁️ AWS Services Used
 
 The solution relies on several AWS services to ensure smooth integration and cost efficiency. The main services are:
 
-* 📁 S3: Stores .pdf files containing structured information that the chatbot uses to generate clear and precise responses.
-* 💬 Lex: Provides the user interface for the chatbot, including voice services like Amazon Transcribe and Amazon Polly.
-* 🧠 Bedrock: Acts as the hub for foundational model (FM) selection and hosts the knowledge base.
-* ⚙ Lambda: Functions as a serverless service facilitating calls to the AI agent and its tools, offering automatic scalability, security, and flexibility.
+* [**📁 S3**](https://aws.amazon.com/s3 "Go to Amazon S3"): Stores .pdf files containing structured information that the chatbot uses to generate clear and precise responses.
+* [**💬 Lex**](https://aws.amazon.com/lex/ "Go to Amazon Lex"): Provides the user interface for the chatbot, including voice services like **Amazon Transcribe** and **Amazon Polly**.
+* [**🧠 Bedrock**](https://aws.amazon.com/bedrock/ "Go to Amazon Bedrock"): Acts as the hub for foundational model (FM) selection and hosts the knowledge base.
+* [**⚙ Lambda**](https://aws.amazon.com/lambda/ "Go to Amazon Lambda"): Functions as a serverless service facilitating calls to the AI agent and its tools, offering automatic scalability, security, and flexibility.
 
 ## 📚 Libraries and Tools
 
-🦜️🔗 LangChain: Enables the integration and orchestration of different AI tools and knowledge bases, facilitating the creation of a robust AI agent.
-🌍 Wikipedia-API: Provides access to extensive and updated data from Wikipedia, enriching the chatbot's capabilities.
+* [**🦜️🔗 LangChain**](https://github.com/langchain-ai/langchain "Go to LangChain repository"): Enables the integration and orchestration of different AI tools and knowledge bases, facilitating the creation of a robust AI agent.
+* [**🌍 Wikipedia-API**](https://github.com/martin-majlis/Wikipedia-API "Go to Wikipedia-API repository"): Provides access to extensive and updated data from Wikipedia, enriching the chatbot's capabilities.
 
 ## 🚀 Functionality Description
 
 The general flow of the chatbot is as follows:
 
-1. Event Reception: AWS Lambda receives an event from Amazon Lex.
-1. Response Generation: Lambda calls the AI agent that uses LangChain to process the event.
-1. Knowledge Base Query: The agent employs RAG to search for information in the knowledge base hosted on Amazon Bedrock.
-1. Access to Wikipedia: If additional information is needed, the agent queries Wikipedia using its API.
-1. User Response: The generated response is formatted and sent back to Amazon Lex, which presents it to the user.
+1. **Event Reception**: AWS Lambda receives an event from Amazon Lex.
+2. **Response Generation**: Lambda calls the AI agent that uses LangChain to process the event.
+3. **Knowledge Base Query**: The agent employs RAG to search for information in the knowledge base hosted on Amazon Bedrock.
+4. **Access to Wikipedia**: If additional information is needed, the agent queries Wikipedia using its API.
+5. **User Response**: The generated response is formatted and sent back to Amazon Lex, which presents it to the user.
 
+```mermaid
+flowchart TD
+    A(Lex sends an event) -->|event| B["Lambda creates and invokes 
+    the agent using LangChain"]
+    B --> C{"ReAct agent chooses
+     and 
+     returns the answer"}
+    C -->|Direct answer| D["Lambda formats the response 
+    and sends it back to Lex"]
+    C -->|Knowledge base answer| D
+    C -->|Wikipedia answer| D
+```
