@@ -71,11 +71,11 @@ The solution relies on several AWS services to ensure smooth integration and cos
 
 The general flow of the chatbot is as follows:
 
-1️⃣ **Event Reception**: AWS Lambda receives an event from Amazon Lex.
-2️⃣ **Response Generation**: Lambda calls the AI agent that uses LangChain to process the event.
-3️⃣ **Knowledge Base Query**: The agent employs RAG to search for information in the knowledge base hosted on Amazon Bedrock.
-4️⃣ **Access to Wikipedia**: If additional information is needed, the agent queries Wikipedia using its API.
-5️⃣ **User Response**: The generated response is formatted and sent back to Amazon Lex, which presents it to the user.
+* 1️⃣ **Event Reception**: AWS Lambda receives an event from Amazon Lex.
+* 2️⃣ **Response Generation**: Lambda calls the AI agent that uses LangChain to process the event.
+* 3️⃣ **Knowledge Base Query**: The agent employs RAG to search for information in the knowledge base hosted on Amazon Bedrock.
+* 4️⃣ **Access to Wikipedia**: If additional information is needed, the agent queries Wikipedia using its API.
+* 5️⃣ **User Response**: The generated response is formatted and sent back to Amazon Lex, which presents it to the user.
 
 ```mermaid
 flowchart TD
