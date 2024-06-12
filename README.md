@@ -6,7 +6,7 @@ _Social_
 
 _Servicios usados_
 
-[![Python - 3.12.0](https://img.shields.io/static/v1?label=Python&message=3.12.0&color=3776AB&labelColor=3776AB&logo=python&logoColor=ffffff)](https://www.python.org/downloads/release/python-3120/ "Go to Python version") [![LangChain](https://img.shields.io/badge/🦜️🔗Langchain-0.2.3-1C3C3C?&labelColor=1C3C3C)](https://github.com/langchain-ai "Go to LangChain") [![Amazon Web Services](https://img.shields.io/badge/Amazon_Web_Services-232f3e?logo=amazonwebservices&logoColor=ffffff)](https://aws.amazon.com "Go to AWS")  [![Wikipedia - API](https://img.shields.io/badge/Wikipedia-API-000000?logo=wikipedia&logoColor=ffffff&labelColor=000000)](https://github.com/martin-majlis/Wikipedia-API "Go to Wikipedia-API")
+[![Python - 3.12.0](https://img.shields.io/static/v1?label=Python&message=3.12.0&color=3776AB&labelColor=3776AB&logo=python&logoColor=ffffff)](https://www.python.org/downloads/release/python-3120/ "Go to Python version") [![LangChain](https://img.shields.io/badge/🦜️🔗Langchain-0.2.3-1C3C3C?&labelColor=1C3C3C)](https://github.com/langchain-ai "Go to LangChain") [![Amazon Web Services](https://img.shields.io/badge/Amazon_Web_Services-232f3e?logo=amazonwebservices&logoColor=ffffff)](https://aws.amazon.com "Go to AWS") [![Wikipedia-API](https://img.shields.io/badge/Wikipedia--API-000000?logo=wikipedia&logoColor=ffffff)](https://github.com/martin-majlis/Wikipedia-API "Go to Wikipedia-API")
 
 ## ✏️ Resumen
 
