@@ -1,6 +1,12 @@
 # 🤖 ai-chatbot
 
-[![565059 - ai-chatbot](https://img.shields.io/static/v1?label=565059&message=ai-chatbot&color=FF8900&logo=github)](https://github.com/565059/ai-chatbot "Go to GitHub repo") [![Python - 3.12.0](https://img.shields.io/static/v1?label=Python&message=3.12.0&color=3776AB&labelColor=3776AB&logo=python&logoColor=ffffff)](https://www.python.org/downloads/release/python-3120/ "Go to Python version") [![Amazon Web Services](https://img.shields.io/badge/Amazon_Web_Services-232f3e?logo=amazonwebservices&logoColor=ffffff)](https://aws.amazon.com "Go to AWS") [![LangChain](https://img.shields.io/badge/🦜️🔗Langchain-0.2.3-1C3C3C?&labelColor=1C3C3C)](https://github.com/langchain-ai "Go to LangChain")
+_Social_
+
+[![565059 - ai-chatbot](https://img.shields.io/static/v1?label=565059&message=ai-chatbot&color=FF8900&logo=github)](https://github.com/565059/ai-chatbot "Go to GitHub repo") 
+
+_Servicios usados_
+
+[![Python - 3.12.0](https://img.shields.io/static/v1?label=Python&message=3.12.0&color=3776AB&labelColor=3776AB&logo=python&logoColor=ffffff)](https://www.python.org/downloads/release/python-3120/ "Go to Python version") [![Amazon Web Services](https://img.shields.io/badge/Amazon_Web_Services-232f3e?logo=amazonwebservices&logoColor=ffffff)](https://aws.amazon.com "Go to AWS") [![LangChain](https://img.shields.io/badge/🦜️🔗Langchain-0.2.3-1C3C3C?&labelColor=1C3C3C)](https://github.com/langchain-ai "Go to LangChain") [![Wikipedia](https://img.shields.io/badge/Wikipedia-000000?logo=wikipedia&logoColor=ffffff)](https://en.wikipedia.org)
 
 ## ✏️ Resumen
 
