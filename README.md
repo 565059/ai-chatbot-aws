@@ -1,6 +1,6 @@
 # ai-chatbot
 
-[![565059 - ai-chatbot](https://img.shields.io/static/v1?label=565059&message=ai-chatbot&color=FF8900&logo=github)](https://github.com/565059/ai-chatbot "Go to GitHub repo") [![Python - 3.12.0](https://img.shields.io/static/v1?label=Python&message=3.12.0&color=FFDE56&logo=python&logoColor=FFDE56&labelColor=3776AB)](https://www.python.org/downloads/release/python-3120/ "Go to Python version")
+[![565059 - ai-chatbot](https://img.shields.io/static/v1?label=565059&message=ai-chatbot&color=FF8900&logo=github)](https://github.com/565059/ai-chatbot "Go to GitHub repo") [![Python - 3.12.0](https://img.shields.io/static/v1?label=Python&message=3.12.0&color=3776AB&logo=python&logoColor=FFDE56)](https://www.python.org/downloads/release/python-3120/ "Go to Python version")
 
 ## Resumen
 
