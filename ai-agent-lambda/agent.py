@@ -1,9 +1,14 @@
-from langchain.agents import create_react_agent
-from langchain.agents.agent import AgentExecutor
+import logging
+
+from langchain.agents import create_react_agent, AgentExecutor
 from langchain_core.prompts import PromptTemplate
 from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_core.messages import AIMessage, HumanMessage
+
+
+agent_logger = logging.getLogger("AGENT")
+agent_logger.setLevel(logging.INFO)
 
 class ReactAgent:
     """
@@ -41,9 +46,10 @@ class ReactAgent:
         )
         
         if agent_with_history:
+            agent_logger.info("AGENT: Agente creado con éxito")
             return agent_with_history
         else:
-            raise Exception("Error creating agent")
+            agent_logger.error("AGENT: Error al crear el agente")
 
     def invoke(self, input_variables: dict): 
         """Crea la respuesta a la pregunta del usuario y actualiza el historial de chat"""
@@ -64,13 +70,13 @@ class ReactAgent:
                 config
             )
         except ValueError as e:
-            print(e)
-            answer = "Ha habido un problema invocando al agente."
+            agent_logger.error(f"AGENT: Ha habido un problema invocando el agente:\n{e}")
 
         answer = complete_answer["output"]
         chat_history.extend(
             [HumanMessage(content=input), AIMessage(content=answer)]
         )
 
+        agent_logger.info(f"AGENT: Respuesta del agente: \n{answer}")
         return answer, chat_history
     

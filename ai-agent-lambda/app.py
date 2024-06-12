@@ -2,12 +2,14 @@ import json
 import logging
 
 import env_config
-from messages import MessagesDecoder, MessagesEncoder
-from langchain_aws import ChatBedrock
-from tools import Tools
-import env_config
 from agent import ReactAgent
+from langchain_aws import ChatBedrock
+from messages import MessagesDecoder, MessagesEncoder
+from tools import Tools
 
+
+app_logger = logging.getLogger("APP")
+app_logger.setLevel(logging.INFO)
 
 llm = ChatBedrock(
     client=env_config.BEDROCK_CLIENT,
@@ -62,6 +64,7 @@ def lex_format_response(event, response_text, chat_history, content_type):
     event["sessionState"]["intent"]["state"] = "Fulfilled"
 
     if content_type == "SSML":
+        app_logger.info("APP: SSML response")
         return {
             "sessionState": {
                 "sessionAttributes": {"chat_history": chat_history},
@@ -87,6 +90,7 @@ def lex_format_response(event, response_text, chat_history, content_type):
         }
 
     else:
+        app_logger.info("APP: PlainText response")
         return {
             "sessionState": {
                 "sessionAttributes": {"chat_history": chat_history},
@@ -145,8 +149,6 @@ def lambda_handler(event, context):
             result = {"answer": "Por favor, realiza una pregunta."}
         else:
             input_variables = {"input": user_input, "chat_history": chat_history}
-
-            logging.info("Input variables: %s", input_variables)
 
             result = agent.invoke(input_variables)
 
