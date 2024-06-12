@@ -1,11 +1,8 @@
 import json
 import logging
-import random
 
 import env_config
 from messages import MessagesDecoder, MessagesEncoder
-from langchain_core.messages.ai import AIMessage
-from langchain_core.messages.human import HumanMessage
 from langchain_aws import ChatBedrock
 from tools import Tools
 import env_config

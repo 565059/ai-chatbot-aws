@@ -5,9 +5,6 @@ from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_core.messages import AIMessage, HumanMessage
 
-import env_config
-
-
 class ReactAgent:
     """
     Clase que crea un agente ReAct con memoria utilizando como herramientas
