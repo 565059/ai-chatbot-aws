@@ -2,7 +2,7 @@
 
 _Social_
 
-[![565059's GitHub](https://img.shields.io/badge/565059-000000?logo=github&logoColor=ffffff)](https://github.com/565059 "Go to 565059's GitHub") [![565059's Twitter](https://img.shields.io/badge/565059-Follow-black?logo=x&logoColor=000000)](https://twitter.com/56_50_59)
+[![565059's GitHub](https://img.shields.io/badge/565059-000000?logo=github&logoColor=ffffff)](https://github.com/565059 "Go to 565059's GitHub") [![565059's Twitter](https://img.shields.io/badge/565059-Follow-black?logo=x&logoColor=000000&labelColor=FFFFFF)](https://twitter.com/56_50_59)
 
 _Services used_
 
