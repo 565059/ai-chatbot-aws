@@ -24,14 +24,14 @@ llm = ChatBedrock(
 
 tools = Tools(env_config).tool_list
 
-template = """Eres un asistente de inteligencia artificial llamado AVI que responde preguntas del usuario en el idioma en el que está escrita la pregunta. Las herramientas que puede que necesites para ayudarte son:
+template = """Eres un asistente de inteligencia artificial que responde preguntas del usuario en el idioma en el que está escrita la pregunta. Las herramientas que puede que necesites para ayudarte son:
 
 [{tools}]
 
 No hace falta que las herramientas sean utilizadas para contestar a la pregunta del usuario, debes utilizarlas cuando no sepas responder por tí mismo. Utilizarás el historial de chat entre etiquetas XML de <chat_history> para ayudarte a contextualizar las preguntas realizadas por el usuario. Para responder de la manera más concisa y acertada tienes que emplear este formato:
 
 <chat_history>
-[HumanMessage(content="hola, me llamo pepe")], [AIMessage(content="Hola Pepe, soy AVI")]
+[HumanMessage(content="hola, me llamo pepe")], [AIMessage(content="Hola Pepe, soy una Inteligencia Artificial")]
 </chat_history>
 
 Question: la pregunta realizada por el usuario que debes responder, si no sabes la respuesta di "Lo siento, no conozco la respuesta a tu pregunta"
