@@ -37,7 +37,7 @@ class Tools:
     
     def search_wikipedia(self, title):
         """Método que busca en Wikipedia para saber si la página con el título proporcionado existe."""
-        wiki_wiki = wikipediaapi.Wikipedia('AVIBot/0.1 (https://t-enclave.com/avi-learning/)','es')
+        wiki_wiki = wikipediaapi.Wikipedia('ProyectoEjemplo/0.0 (ejemplo@ejemplo.com)', 'es')
         page = wiki_wiki.page(title)
         
         if page.exists():
