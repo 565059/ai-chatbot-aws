@@ -3,7 +3,7 @@ import boto3
 
 REGION_NAME = os.getenv("AWS_REGION", "us-east-1")
 MODEL_ID = os.getenv("MODEL_ID","anthropic.claude-v2:1")
-KNOWLEDGE_BASE_ID = os.getenv("KNOWLEDGE_BASE_ID", "X4D9VAAAV5")
+KNOWLEDGE_BASE_ID = os.getenv("KNOWLEDGE_BASE_ID")
 
 TEMPERATURE = float(os.getenv("TEMPERATURE", "0.5")) # Aleatoriedad
 TOP_K = int(os.getenv("TOP_K", "50")) # Limita predicciones

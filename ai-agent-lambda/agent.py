@@ -5,29 +5,26 @@ from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_core.messages import AIMessage, HumanMessage
 
-from tools import Tools
 import env_config
 
 
 class ReactAgent:
-    
+    """
+    Clase que crea un agente ReAct con memoria utilizando como herramientas
+    Wikipedia y una base de conocimiento.
+    """
     def __init__(self, llm, template, tools, session_id, chat_history):
-        self.llm = llm
-        self.template = template
-        self.tools = tools
-        self.session_id = session_id # event["session_id"]
-        self.chat_history = chat_history
+        self.session_id = session_id
+        self.react_agent = self.create_memory_react_agent(llm, template, tools, session_id, chat_history)
         
-    def create_agent(self):
-        prompt = PromptTemplate.from_template(self.template)
+    def create_memory_react_agent(self, llm, template, tools, session_id, chat_history):
+        """Método que crea un agente ReAct con memoria"""
+        prompt = PromptTemplate.from_template(template)
         
-        
-        memory = ChatMessageHistory(session_id=self.session_id, messages=self.chat_history)
-
-        tools = Tools(env_config).tool_list
+        memory = ChatMessageHistory(session_id=session_id, messages=chat_history)
         
         react_agent = create_react_agent(
-            llm=self.llm,
+            llm=llm,
             tools=tools,
             prompt=prompt,
         )
@@ -62,8 +59,7 @@ class ReactAgent:
         config = {"configurable": {"session_id": self.session_id}}
         
         try:
-            react_agent = self.create_agent()
-            complete_answer = react_agent.invoke(
+            complete_answer = self.react_agent.invoke(
                 {
                     "input": input, 
                     "chat_history": chat_history

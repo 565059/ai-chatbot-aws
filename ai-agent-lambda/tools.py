@@ -4,12 +4,14 @@ from langchain_aws import  AmazonKnowledgeBasesRetriever
 import wikipedia
 
 class Tools:
+    """Clase que contiene las herramientas utilizadas por el agente de IA."""
     
     def __init__(self, env_config) -> None:
         self.tool_list = [self.create_kb_retriever_tool(env_config), self.create_wikipedia_tool()]
         
         
     def create_kb_retriever_tool(self, env_config):
+        """Método que crea una herramienta a partir de una base de conocimiento alojada en AWS."""
         kb_retriever = AmazonKnowledgeBasesRetriever(
             knowledge_base_id=env_config.KNOWLEDGE_BASE_ID,
             retrieval_config={"vectorSearchConfiguration": {"numberOfResults": env_config.RESULTS_NUMBER}},
@@ -28,6 +30,7 @@ class Tools:
         
         
     def create_wikipedia_tool(self):
+        """Método que crea una herramienta de búsqueda en Wikipedia a partir de un método y la biblioteca de 'wikipedia'."""
         wikipedia_tool = Tool.from_function(
             func=wikipedia.summary,
             name="Wikipedia",

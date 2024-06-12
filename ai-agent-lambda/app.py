@@ -1,5 +1,6 @@
 import json
 import logging
+import random
 
 import env_config
 from messages import MessagesDecoder, MessagesEncoder
@@ -57,8 +58,10 @@ Thought: {agent_scratchpad}"""
 
 
 def lex_format_response(event, response_text, chat_history, content_type):
-    """Formatea la respuesta del bot al formato de evento de Lex"""
-
+    """
+    Crea el formato de respuesta requerido por Lex, incluyendo el historial
+    de chat y el tipo de respuesta: SSML (Audio) | PlainText (Texto)
+    """
     event["sessionState"]["intent"]["state"] = "Fulfilled"
 
     if content_type == "SSML":
@@ -71,7 +74,13 @@ def lex_format_response(event, response_text, chat_history, content_type):
             "messages": [
                 {
                     "contentType": "SSML",
-                    "content": f"<speak>{response_text}</speak>",
+                    "content": f"""
+                        <speak>
+                            <lang xml:lang="es-ES">
+                                {response_text}
+                            </lang>
+                        </speak>
+                    """,
                 }
             ],
             "sessionId": event["sessionId"],
@@ -101,18 +110,27 @@ def lex_format_response(event, response_text, chat_history, content_type):
 
 
 def load_chat_history(session):
+    """
+    Transforma el json recuperado de la sesión en mensajes de tipo 
+    AIMessage o HumanMessage
+    """
     if "chat_history" in session:
         return json.loads(session["chat_history"], cls=MessagesDecoder)
     else:
         return []
     
 def save_chat_history(chat_history):
+    """
+    Transforma la lista de mensajes de tipo AIMessage o HumanMessage 
+    a un json. Además si hay más 6 mensajes en el historial de chat
+    borra los 3 primeros.
+    """
     if len(chat_history) > 6:
         chat_history = chat_history[-3:]
     return json.dumps(chat_history, cls=MessagesEncoder)
 
 def lambda_handler(event, context):
-    """Función principal de la lambda"""
+    """Función que ejecuta Lambda"""
 
     if event["inputTranscript"]:
         user_input = event["inputTranscript"]
