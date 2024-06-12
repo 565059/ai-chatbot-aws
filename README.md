@@ -2,7 +2,7 @@
 
 _Social_
 
-[![565059 - ai-chatbot](https://img.shields.io/badge/565059-000000?logo=github&logoColor=ffffff)](https://github.com/565059 "Go to 565059's GitHub")
+[![565059 - ai-chatbot](https://img.shields.io/badge/565059-000000?logo=github&logoColor=ffffff)](https://github.com/565059 "Go to 565059's GitHub") [![Twitter](https://img.shields.io/badge/Twitter-Follow-blue)](https://twitter.com/56_50_59)
 
 _Services used_
 
