@@ -1,6 +1,6 @@
 # 🤖 ai-chatbot
 
-[![565059 - ai-chatbot](https://img.shields.io/static/v1?label=565059&message=ai-chatbot&color=FF8900&logo=github)](https://github.com/565059/ai-chatbot "Go to GitHub repo") [![Python - 3.12.0](https://img.shields.io/static/v1?label=Python&message=3.12.0&color=3776AB&logo=python&logoColor=FFDE56)](https://www.python.org/downloads/release/python-3120/ "Go to Python version") ![[Amazon Web Services](https://img.shields.io/static/v1?label=Amazon_Web_Services&message=asd&logo=amazonwebservices&labelColor=232f3e&color=232f3e)](https%3A%2F%2Faws.amazon.com)
+[![565059 - ai-chatbot](https://img.shields.io/static/v1?label=565059&message=ai-chatbot&color=FF8900&logo=github)](https://github.com/565059/ai-chatbot "Go to GitHub repo") [![Python - 3.12.0](https://img.shields.io/static/v1?label=Python&message=3.12.0&color=3776AB&logo=python&logoColor=FFDE56)](https://www.python.org/downloads/release/python-3120/ "Go to Python version") ![[Amazon Web Services](https://img.shields.io/static/v1?label=AmazonWebServices&message=asd&color=232f3e&logo=amazonwebservices&logoColor=FFFFFF&labelColor=232f3e)](https://aws.amazon.com "Go to AWS")
 
 
 ## ✏️ Resumen
