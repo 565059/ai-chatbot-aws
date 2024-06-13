@@ -68,10 +68,10 @@ class ReactAgent:
         )
         
         if agent_with_history:
-            agent_logger.info("AGENT: Agente creado con éxito")
+            agent_logger.info("AGENT: Agent created successfully")
             return agent_with_history
         else:
-            agent_logger.error("AGENT: Error al crear el agente")
+            agent_logger.error("AGENT: Error creating the agent")
 
     def invoke(self, input_variables: dict): 
         """
@@ -100,13 +100,13 @@ class ReactAgent:
                 config
             )
         except ValueError as e:
-            agent_logger.error(f"AGENT: Ha habido un problema invocando el agente:\n{e}")
+            agent_logger.error(f"AGENT: There was a problem invoking the agent:\n{e}")
 
         answer = complete_answer["output"]
         chat_history.extend(
             [HumanMessage(content=input), AIMessage(content=answer)]
         )
 
-        agent_logger.info(f"AGENT: Respuesta del agente: \n{answer}")
+        agent_logger.info(f"AGENT: Agent's response: \n{answer}")
         return answer, chat_history
     
