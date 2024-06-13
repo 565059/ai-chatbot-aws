@@ -24,31 +24,32 @@ llm = ChatBedrock(
 
 tools = Tools(env_config).tool_list
 
-template = """Eres un asistente de inteligencia artificial que responde preguntas del usuario en el idioma en el que está escrita la pregunta. Las herramientas que puede que necesites para ayudarte son:
+# Template for the agent's prompt, guiding how it should respond to user queries
+template = """You are an AI assistant responding to user questions in the language in which the question is written. The tools you might need to help you are:
 
 [{tools}]
 
-No hace falta que las herramientas sean utilizadas para contestar a la pregunta del usuario, debes utilizarlas cuando no sepas responder por tí mismo. Utilizarás el historial de chat entre etiquetas XML de <chat_history> para ayudarte a contextualizar las preguntas realizadas por el usuario. Para responder de la manera más concisa y acertada tienes que emplear este formato:
+You don't have to use the tools to answer the user's question; use them only if you can't respond by yourself. Use the chat history enclosed within <chat_history> XML tags to help you contextualize the user's questions. To respond in the most concise and accurate way, you should use this format:
 
 <chat_history>
-[HumanMessage(content="hola, me llamo pepe")], [AIMessage(content="Hola Pepe, soy una Inteligencia Artificial")]
+[HumanMessage(content="Hello, my name is Pepe")], [AIMessage(content="Hello Pepe, I am an Artificial Intelligence")]
 </chat_history>
 
-Question: la pregunta realizada por el usuario que debes responder, si no sabes la respuesta di "Lo siento, no conozco la respuesta a tu pregunta"
-Thought: este es mi bloc de notas, en el que pongo los pasos que tengo que seguir para responder a la pregunta, además me preguntaré: ¿Tengo que utilizar una herramienta? Sí
-Action: la acción que debes realizar, tiene que ser una de: [{tool_names}]
-Action Input: el input que debes proporcionar a la herramienta, NUNCA devuelvas el resultado de la herramienta en este paso
-Observation: el resultado de la acción, si no devuelve nada di "No lo se"
-... (este formato de Thought/Action/Action Input/Observation NO SE PUEDE REPETIR)
+Question: the question asked by the user that you need to answer; if you don't know the answer, say "Sorry, I don't know the answer to your question."
+Thought: this is my notepad where I note down the steps I need to take to answer the question. I also ask myself: Do I need to use a tool? Yes
+Action: the action you need to perform, it must be one of: [{tool_names}]
+Action Input: the input you must provide to the tool; NEVER return the tool's result in this step
+Observation: the result of the action; if it returns nothing, say "I don't know."
+... (this Thought/Action/Action Input/Observation format CANNOT BE REPEATED)
 
-Si no necesitas utilizar una herramienta para responder a la pregunta o has conseguido el resultado de realizar la acción DEBES utilizar este formato:
+If you don't need to use a tool to answer the question or have achieved the result from performing the action, you MUST use this format:
 
-Thought: ¿Tengo que utilizar una herramienta? No
-Action: recuperar la respuesta
-Final Answer: la respuesta final a la pregunta original del usuario es: [respuesta final]
+Thought: Do I need to use a tool? No
+Action: retrieve the answer
+Final Answer: the final answer to the user's original question is: [final answer]
 
 
-¡Comienza!
+Let's begin!
 
 {chat_history}
 
@@ -58,8 +59,17 @@ Thought: {agent_scratchpad}"""
 
 def lex_format_response(event, response_text, chat_history, content_type):
     """
-    Crea el formato de respuesta requerido por Lex, incluyendo el historial
-    de chat y el tipo de respuesta: SSML (Audio) | PlainText (Texto)
+    Creates the response format required by Lex, including chat history
+    and the type of response: SSML (Audio) | PlainText (Text)
+
+    Args:
+        event: The event data from Lex.
+        response_text: The response text to be sent to the user.
+        chat_history: The updated chat history.
+        content_type: The type of content, either "SSML" or "PlainText".
+
+    Returns:
+        A dictionary representing the formatted response.
     """
     event["sessionState"]["intent"]["state"] = "Fulfilled"
 
@@ -112,8 +122,14 @@ def lex_format_response(event, response_text, chat_history, content_type):
 
 def load_chat_history(session):
     """
-    Transforma el json recuperado de la sesión en mensajes de tipo 
-    AIMessage o HumanMessage
+    Transforms the JSON retrieved from the session into messages of type 
+    AIMessage or HumanMessage.
+
+    Args:
+        session: The session data containing chat history.
+
+    Returns:
+        A list of messages decoded from JSON.
     """
     if "chat_history" in session:
         return json.loads(session["chat_history"], cls=MessagesDecoder)
@@ -122,17 +138,31 @@ def load_chat_history(session):
     
 def save_chat_history(chat_history):
     """
-    Transforma la lista de mensajes de tipo AIMessage o HumanMessage 
-    a un json. Además si hay más 6 mensajes en el historial de chat
-    borra los 3 primeros.
+    Transforms the list of messages of type AIMessage or HumanMessage 
+    into a JSON string. If there are more than 6 messages in the chat history,
+    it removes the first 3 messages.
+
+    Args:
+        chat_history: The current chat history as a list of messages.
+
+    Returns:
+        A JSON string representing the updated chat history.
     """
     if len(chat_history) > 6:
         chat_history = chat_history[-3:]
     return json.dumps(chat_history, cls=MessagesEncoder)
 
 def lambda_handler(event, context):
-    """Función que ejecuta Lambda"""
+    """
+    Lambda function to handle the input event and context from Lex.
 
+    Args:
+        event: The event data from Lex.
+        context: The context data for the Lambda execution.
+
+    Returns:
+        The formatted response to be sent to Lex.
+    """
     if event["inputTranscript"]:
         user_input = event["inputTranscript"]
         session = event["sessionState"]["sessionAttributes"]
