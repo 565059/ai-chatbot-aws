@@ -12,15 +12,37 @@ agent_logger.setLevel(logging.INFO)
 
 class ReactAgent:
     """
-    Clase que crea un agente ReAct con memoria utilizando como herramientas
-    Wikipedia y una base de conocimiento.
+    Class to create a ReAct agent with memory using tools like Wikipedia 
+    and a knowledge base.
     """
     def __init__(self, llm, template, tools, session_id, chat_history):
+        """
+        Initializes the ReactAgent instance.
+
+        Args:
+            llm: The language model to use.
+            template: The prompt template to use.
+            tools: The tools for the agent.
+            session_id: The unique session identifier.
+            chat_history: The previous chat history.
+        """
         self.session_id = session_id
         self.react_agent = self.create_memory_react_agent(llm, template, tools, session_id, chat_history)
         
     def create_memory_react_agent(self, llm, template, tools, session_id, chat_history):
-        """Método que crea un agente ReAct con memoria"""
+        """
+        Creates a ReAct agent with memory.
+
+        Args:
+            llm: The language model to use.
+            template: The prompt template to use.
+            tools: The tools for the agent.
+            session_id: Unique session identifier.
+            chat_history: Previous chat history.
+
+        Returns:
+            An instance of RunnableWithMessageHistory if successful, otherwise logs an error.
+        """
         prompt = PromptTemplate.from_template(template)
         
         memory = ChatMessageHistory(session_id=session_id, messages=chat_history)
@@ -52,7 +74,15 @@ class ReactAgent:
             agent_logger.error("AGENT: Error al crear el agente")
 
     def invoke(self, input_variables: dict): 
-        """Crea la respuesta a la pregunta del usuario y actualiza el historial de chat"""
+        """
+        Generates a response to the user's query and updates the chat history.
+
+        Args:
+            input_variables: Dictionary containing the user input and chat history.
+
+        Returns:
+            A tuple with the agent's response and the updated chat history.
+        """
 
         input= input_variables["input"]
         chat_history = input_variables["chat_history"]
