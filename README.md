@@ -14,7 +14,7 @@ This project develops an intelligent chatbot that generates automatic responses 
 
 ## 🤔 Generative AI with RAG
 
-A [**ReAct Agent**](https://react-lm.github.io/ "Go to ReAct Agent explanation") AI type has been implemented, utilizing the [**Retrieval Augmented Generation (RAG)**](https://aws.amazon.com/what-is/retrieval-augmented-generation/ "Go to RAG explanation") technique to provide accurate and up-to-date responses. This agent interacts with two key tools:
+A [**ReAct Agent**](https://react-lm.github.io/ "Go to ReAct Agent explanation") has been implemented, utilizing the [**Retrieval Augmented Generation (RAG)**](https://aws.amazon.com/what-is/retrieval-augmented-generation/ "Go to RAG explanation") technique to provide accurate and up-to-date responses. This agent interacts with two key tools:
 
 * **Knowledge Base Tool**: we first create the knowledge base using **Amazon Titan Embeddings** as the embeddings model and **Pinecone** as the vector database in which the indexed embeddings will be stored. Then, we create the knowledge base tool using the `create_retriever_tool` method from **LangChain** transforming our retriever into a `Tool` object so that the agent can access it and execute it.
 
