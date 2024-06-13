@@ -4,10 +4,10 @@ from langchain_core.messages.ai import AIMessage
 from langchain_core.messages.human import HumanMessage
 
 class MessagesEncoder(json.JSONEncoder):
-    """Codificador de mensajes a json"""
+    """Encoder for messages to JSON."""
 
     def default(self, o):
-        """Codifica un mensaje a json a partir de un objeto"""
+        """Encode a message to JSON based on the object type."""
         if isinstance(o, HumanMessage):
             return {"type": "human", "content": o.content}
         elif isinstance(o, AIMessage):
@@ -17,13 +17,14 @@ class MessagesEncoder(json.JSONEncoder):
 
 
 class MessagesDecoder(json.JSONDecoder):
-    """Decodificador de mensajes desde json"""
+    """Decoder for messages from JSON."""
 
     def __init__(self):
+        # Initialize the JSONDecoder with a custom object hook (decode_message method)
         json.JSONDecoder.__init__(self, object_hook=self.decode_message)
 
     def decode_message(self, obj):
-        """Decodifica un mensaje a partir de un objeto json"""
+        """Decode a message from a JSON object."""
         if "type" in obj and "content" in obj:
             if obj["type"] == "human":
                 return HumanMessage(content=obj["content"])
