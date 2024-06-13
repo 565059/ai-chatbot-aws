@@ -2,9 +2,9 @@
 
 _Social_
 
-[![565059's GitHub](https://img.shields.io/badge/565059-000000?logo=github&logoColor=ffffff)](https://github.com/565059 "Go to 565059's GitHub") [![565059's Twitter](https://img.shields.io/badge/565059-Follow-black?logo=x&logoColor=FFFFFF&labelColor=000000)](https://twitter.com/56_50_59)
+[![565059's GitHub](https://img.shields.io/badge/565059-000000?logo=github&logoColor=ffffff)](https://github.com/565059 "Go to 565059's GitHub") [![565059's Twitter](https://img.shields.io/badge/565059-Follow-black?logo=x&logoColor=FFFFFF&labelColor=000000)](https://twitter.com/56_50_59) [![565059's LinkedIn](https://img.shields.io/badge/Luis_Fernández_Castelo-FFFFFF?logo=linkedin&logoColor=0A66C2)](https://www.linkedin.com/in/luis-fern%C3%A1ndez-castelo-06358025b)
 
-[![565059's LinkedIn](https://img.shields.io/badge/Luis_Fernández_Castelo-FFFFFF?logo=linkedin&logoColor=0A66C2)](https://www.linkedin.com/in/luis-fern%C3%A1ndez-castelo-06358025b)
+
 _Services used_
 
 [![Python - 3.12.0](https://img.shields.io/static/v1?label=Python&message=v3.12.0&color=3776AB&labelColor=3776AB&logo=python&logoColor=ffffff)](https://www.python.org/downloads/release/python-3120/ "Go to Python") [![LangChain](https://img.shields.io/badge/🦜️🔗Langchain-v0.2.3-1C3C3C?&labelColor=1C3C3C)](https://github.com/langchain-ai "Go to LangChain") [![Wikipedia-API](https://img.shields.io/badge/Wikipedia--API-v0.6.8-000000?logo=wikipedia&logoColor=ffffff&labelColor=000000)](https://github.com/martin-majlis/Wikipedia-API "Go to Wikipedia-API") [![AWS SDK - Boto3](https://img.shields.io/badge/Boto3-v1.34.124-232f3e?logo=amazonwebservices&logoColor=ffffff&labelColor=232f3e)](https://github.com/boto/boto3 "Go to Boto3") 
