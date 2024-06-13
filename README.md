@@ -2,7 +2,7 @@
 
 _Social_
 
-[![565059's GitHub](https://img.shields.io/badge/565059-black?logo=github&logoColor=ffffff)](https://github.com/565059 "Go to 565059's GitHub") [![565059's LinkedIn](https://img.shields.io/badge/Luis_Fernández_Castelo-FFFFFF?logo=linkedin&logoColor=0A66C2)](https://www.linkedin.com/in/luis-fern%C3%A1ndez-castelo-06358025b)[![565059's Twitter](https://img.shields.io/badge/565059-Follow-white?logo=x&logoColor=FFFFFF&labelColor=000000)](https://twitter.com/56_50_59)
+[![565059's GitHub](https://img.shields.io/badge/565059-black?logo=github&logoColor=ffffff)](https://github.com/565059 "Go to 565059's GitHub")  [![565059's LinkedIn](https://img.shields.io/badge/Luis_Fernández_Castelo-FFFFFF?logo=linkedin&logoColor=0A66C2)](https://www.linkedin.com/in/luis-fern%C3%A1ndez-castelo-06358025b)  [![565059's Twitter](https://img.shields.io/badge/565059-Follow-white?logo=x&logoColor=FFFFFF&labelColor=000000)](https://twitter.com/56_50_59)
 
 _Services used_
 
