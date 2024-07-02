@@ -11,6 +11,7 @@ TEMPERATURE = float(os.getenv("TEMPERATURE", "0.5"))  # Randomness
 TOP_K = int(os.getenv("TOP_K", "50"))  # Limits predictions
 TOP_P = float(os.getenv("TOP_P", "0.9"))  # Probability of generated tokens
 MAX_TOKENS = int(os.getenv("MAX_TOKENS", "3000"))  # Limits the number of tokens
+MODEL_TEMPLATE = (os.getenv("MODEL_TEMPLATE"))
 
 # Number of results from the knowledge base fetched from environment variables with default value
 RESULTS_NUMBER = int(os.getenv("RESULTS_NUMBER", "4"))
