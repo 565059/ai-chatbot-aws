@@ -1,4 +1,4 @@
-# 🤖 AI Chatbot with LangChain and AWS
+# AI Chatbot with LangChain and AWS
 
 _Social_
 
@@ -8,7 +8,7 @@ _Services used_
 
 [![Python - 3.12.0](https://img.shields.io/static/v1?label=Python&message=v3.12.0&color=3776AB&labelColor=3776AB&logo=python&logoColor=ffffff)](https://www.python.org/downloads/release/python-3120/ "Go to Python") [![LangChain](https://img.shields.io/badge/🦜️🔗Langchain-v0.2.3-1C3C3C?&labelColor=1C3C3C)](https://github.com/langchain-ai "Go to LangChain") [![Wikipedia-API](https://img.shields.io/badge/Wikipedia--API-v0.6.8-000000?logo=wikipedia&logoColor=ffffff&labelColor=000000)](https://github.com/martin-majlis/Wikipedia-API "Go to Wikipedia-API") [![AWS SDK - Boto3](https://img.shields.io/badge/Boto3-v1.34.124-232f3e?logo=amazonwebservices&logoColor=ffffff&labelColor=232f3e)](https://github.com/boto/boto3 "Go to Boto3") 
 
-## 📋 Summary
+## Summary
 
 This project develops an intelligent chatbot that generates automatic responses using generative artificial intelligence and a dynamic knowledge base. The solution integrates various Amazon Web Services (AWS) and leverages the [**LangChain**](https://github.com/langchain-ai/langchain "Go to LangChain") libraries and the [**Wikipedia API**](https://github.com/martin-majlis/Wikipedia-API "Go to Wikipedia-API") to enrich responses.
 
