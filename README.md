@@ -53,7 +53,7 @@ A [**ReAct Agent**](https://react-lm.github.io/ "Go to ReAct Agent explanation")
   )
   ```
 
-## ☁️ AWS Services Used
+## AWS Services Used
 
 The solution relies on several AWS services to ensure smooth integration and cost efficiency. The main services are:
 
